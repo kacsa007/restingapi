@@ -1,0 +1,33 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Reports - For Suade</title>
+    <style>
+        table, th, td
+        {
+            border: 1px black
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align:center;">REPORT</h1>
+    <div>
+        <p style="text-align:right;">Organization : {{ organization }}</p>
+        <p style="text-align:right;">Reported : {{ reported_at }}</p>
+        <p style="text-align:right;">Created : {{ created_at }}</p>
+    </div>
+    <br><br><br>
+    <table >
+                <tr>
+                    <th style="text-align:center">Item</th>
+                    <th style="text-align:center">Price</th>
+                </tr>
+                {% for item in inventory %}
+                <tr>
+                    <td>{{ item.name.upper() }}</td>
+                    <td style="text-align:right"> {{ item.price }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+
+</body>
+</html>
